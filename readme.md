@@ -1,6 +1,6 @@
 # Simple RESTful server that functions as a chat app
 
-[![Deploy](https://img.shields.io/badge/%E2%AC%86%EF%B8%8FDeploy%20to-Heroku-6762a6.svg?style=for-the-badge)](https://heroku.com/deploy) [![license](https://img.shields.io/github/license/iamnapo/cha-cha-chat.svg?style=for-the-badge)](./LICENSE)
+[![Deploy](https://img.shields.io/badge/%E2%AC%86%EF%B8%8FDeploy%20to-Heroku-6762a6.svg?style=for-the-badge)](https://heroku.com/deploy) [![travis](https://img.shields.io/travis/com/iamnapo/cha-cha-chat.svg?style=for-the-badge&logo=travis&label=)](https://travis-ci.com/iamnapo/cha-cha-chat) [![license](https://img.shields.io/github/license/iamnapo/cha-cha-chat.svg?style=for-the-badge)](./LICENSE)
 
 ## Installation
 

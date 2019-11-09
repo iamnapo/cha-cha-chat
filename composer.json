@@ -1,5 +1,5 @@
 {
-    "name": "cha-cha-chat",
+    "name": "iamnapo/cha-cha-chat",
     "description": "Simple RESTful server that functions as a chat app.",
     "keywords": [
         "bunq",
@@ -46,7 +46,8 @@
     "require": {
         "php": "^7.2",
         "flipbox/lumen-generator": "^6.0",
-        "laravel/lumen-framework": "^6.0"
+        "laravel/lumen-framework": "^6.0",
+        "ext-pdo_sqlite": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.4",

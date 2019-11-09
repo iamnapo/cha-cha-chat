@@ -1,0 +1,24 @@
+sudo: false
+os:
+- linux
+language: php
+php:
+- 7.2
+cache:
+  directories:
+  - vendor
+before_script:
+- touch database/database.sqlite
+- composer self-update
+- composer install --no-interaction
+- php artisan migrate --seed --no-interaction --force
+deploy:
+  provider: heroku
+  api_key:
+    secure: MQ6PvJT1LQ6bylLEu4YVxyKfcFBfxudNXH9VTdRTqmsLgOQEEZVTizpHqq31S2AwlGZ2EnczbLP4hES4HCYJSrtk+sLoLoTJy9OAl/xk1nZXNhU/NXWHaL/pwyipt75xIH6ZZhHOcaieuiBtl8RIdZni1/CzWSLSw8xyMo74hvSHj2d7WHy5Edfq3HUi5n+hXWt65cJ78tIxIOgYvqFutLdv1NuUcYKjFE5f4frtJmnPi9EhrpjwA2MNtmYnAAaTFmb+o90aT+H3dnqeWzGnY/G3ip9mQa6q8OTDjw5BQ67e+yeXW8sY8CYIwrDPrh8AGQ479RHI49ZYMWRIPNclwplUREAI08c6l8vFPIjgoWUmM9fSzumIdJiwVKQMB5hDyqtk3IzkYnZtC7xK28z5tXdfws4jYiuFhJCClrLys/P9MKRfm6zsj7cOo+z2izHGDsrDVqNfsE9gduuKe8Z5mA3fBMdBKal+9peiNPn3jRVk6pF3hDREpepkhJanKHUQpAtRaMVckzBTh9I5jiZhJUV/GRFXNxTDAHtEKqqSoxAjcwLVjDKwb5c/FNBkKxa1yQBAh0rU1dmnX1w8p9E4+QdSY3JJYQ5+XjIvZIQDlipfjaKRCqCqAj8C34bs1yz0e0sce+G5H0cv9EvblWqGhpxiWHTKSsXeBqAyOR+UMn8=
+  app: iamnapo-cha-cha-chat
+  on:
+    repo: iamnapo/cha-cha-chat
+  skip_cleanup: true
+notifications:
+  email: false

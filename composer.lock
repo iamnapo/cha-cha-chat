@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "313b00df9e3aeefb15f8165c2322086b",
+    "content-hash": "bf1dc401603b83e9c96340da8b072da9",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -5062,7 +5062,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2"
+        "php": "^7.2",
+        "ext-pdo_sqlite": "*"
     },
     "platform-dev": []
 }
