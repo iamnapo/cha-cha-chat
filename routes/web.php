@@ -1,6 +1,10 @@
 <?php
 
-$router->get('/', function () use ($router) {
+$router->get('/', function () {
+    return view('intro');
+});
+
+$router->get('/version', function () use ($router) {
     return $router->app->version() . '. Created by <a href="https://iamnapo.me">iamnapo</a>.';
 });
 

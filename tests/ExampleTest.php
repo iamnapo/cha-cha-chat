@@ -12,7 +12,7 @@ class ExampleTest extends TestCase
      */
     public function testExample()
     {
-        $this->get('/');
+        $this->get('/version');
 
         $this->assertEquals(
             $this->app->version() . '. Created by <a href="https://iamnapo.me">iamnapo</a>.', $this->response->getContent()

@@ -53,7 +53,7 @@ class MessageController extends BaseController
     public function updateMessage($message_id, Request $request)
     {
         try {
-            $message = User::findOrFail($message_id);
+            $message = Message::findOrFail($message_id);
         } catch (ModelNotFoundException $e) {
             return response('Message not found', 404);
         }
