@@ -1,19 +1,21 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| Here you may define all of your model factories. Model factories give
-| you a convenient way to create models for testing and seeding your
-| database. Just tell the factory how a default model should look.
-|
-*/
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
-        'email' => $faker->email,
+    ];
+});
+
+$factory->define(App\Message::class, function (Faker\Generator $faker) {
+
+    static $users;
+
+    $users = App\User::limit(100)->get();
+
+    return [
+        'sender_id' => $users->count() ? $users->random()->id : factory(App\User::class)->create()->id,
+        'receiver_id' => $users->count() ? $users->random()->id : factory(App\User::class)->create()->id,
+        'content' => $faker->text,
     ];
 });

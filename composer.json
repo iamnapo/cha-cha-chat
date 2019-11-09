@@ -1,18 +1,32 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "name": "cha-cha-chat",
+    "description": "Simple RESTful server that functions as a chat app.",
+    "keywords": [
+        "bunq",
+        "chat",
+        "framework",
+        "laravel",
+        "lumen"
+    ],
     "license": "MIT",
-    "type": "project",
-    "require": {
-        "php": "^7.2",
-        "laravel/lumen-framework": "^6.0"
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
     },
-    "require-dev": {
-        "fzaninotto/faker": "^1.4",
-        "phpunit/phpunit": "^8.0",
-        "mockery/mockery": "^1.0"
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     },
+    "authors": [
+        {
+            "name": "Napoleon-Christos Oikonomou",
+            "email": "napoleonoikon@gmail.com",
+            "homepage": "http://www.iamnapo.me",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "classmap": [
             "database/seeds",
@@ -27,16 +41,17 @@
             "tests/"
         ]
     },
-    "scripts": {
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ]
-    },
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true
-    },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2",
+        "flipbox/lumen-generator": "^6.0",
+        "laravel/lumen-framework": "^6.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "^1.4",
+        "phpunit/phpunit": "^8.0",
+        "mockery/mockery": "^1.0"
+    },
+    "type": "project"
 }

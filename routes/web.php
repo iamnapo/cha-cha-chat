@@ -1,16 +1,20 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
-|
-*/
-
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return $router->app->version() . '. Created by <a href="https://iamnapo.me">iamnapo</a>.';
 });
+
+$router->get('/users', ['uses' => 'UserController@getAllUsers']);
+$router->post('/users', ['uses' => 'UserController@createUser']);
+$router->get('/users/{user_id}', ['uses' => 'UserController@getUser']);
+$router->get('/users/{user_id}/inbox', ['uses' => 'UserController@getInbox']);
+$router->get('/users/{user_id}/sent', ['uses' => 'UserController@getSent']);
+$router->put('/users/{user_id}', ['uses' => 'UserController@updateUser']);
+$router->delete('/users/{user_id}', ['uses' => 'UserController@deleteUser']);
+
+$router->get('/messages', ['uses' => 'MessageController@getAllMessages']);
+$router->get('/messages/conversation', ['uses' => 'MessageController@getConversation']);
+$router->post('/messages', ['uses' => 'MessageController@createMessage']);
+$router->get('/messages/{message_id}', ['uses' => 'MessageController@getMessage']);
+$router->put('/messages/{message_id}', ['uses' => 'MessageController@updateMessage']);
+$router->delete('/messages/{message_id}', ['uses' => 'MessageController@deleteMessage']);
