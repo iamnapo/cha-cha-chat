@@ -8,6 +8,7 @@
         "laravel",
         "lumen"
     ],
+    "homepage": "https://iamnapo-cha-cha-chat.herokuapp.com/",
     "license": "MIT",
     "scripts": {
         "post-root-package-install": [
