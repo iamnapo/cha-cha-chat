@@ -1,17 +1,17 @@
 sudo: false
 os:
-- linux
+  - linux
 language: php
 php:
-- 7.2
+  - 7.2
 cache:
   directories:
-  - vendor
+    - vendor
 before_script:
-- touch database/database.sqlite
-- composer self-update
-- composer install --no-interaction
-- php artisan migrate --seed --no-interaction --force
+  - touch database/database.sqlite
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan migrate --seed --no-interaction --force
 deploy:
   provider: heroku
   api_key:
